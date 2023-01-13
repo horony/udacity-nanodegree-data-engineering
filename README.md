@@ -7,13 +7,18 @@ Project files created during 4 month **nanodegree *Data Engineering with AWS*** 
 
 Files and scripts from procect files.
 
-1. **Data Modeling**
-3. **Cloud Data Warehouses**
-4. **Spark & Data Lakes**
-5. **Automate Data Pipelines**
-6. **Capstone Project**
-  Los 
+**1- Data Modeling**
+tbd 
 
+**2 - Cloud Data Warehouses**
+
+**3 - Spark & Data Lakes**
+
+**4 - Automate Data Pipelines**
+tbd
+
+**5 - Capstone Project:** 
+This project designs an analytical dataware house and corresponding ETLs for the bicycle sharing system *Citi Bikes* in New York City. The project combines bike trip data provided Citi Bikes with weather data of New York City. Data is extracted from a S3 and an API, transformed into six data warehouse table with Spark and safed a parquet-files.
 
 ## Program information
 
