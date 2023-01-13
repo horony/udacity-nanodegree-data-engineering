@@ -7,14 +7,42 @@ https://www.udacity.com/course/data-engineer-nanodegree--nd027?utm_source=gsem_b
 ## Contents of this repository
 
 
-## Topics and contents of the course
+## Program information
 
-Taken from official syllabus
+*as cited from official syllabus...*
 
-1. Data modelling
--- O
---s
-2. 
+**Students will learn to:**
+- Create user-friendly relational and NoSQL data models.
+- Create scalable and efficient data warehouses.
+- Work efficiently with massive datasets.
+- Build and interact with a cloud-based data lake.
+- Automate and monitor data pipelines.
+- Develop proficiency in Spark, Airflow, and AWS tools.
+
+**Table of contents**
+
+1. **Data Modeling**
+  - Introduction to Data Modeling
+  - Relational Data Models
+  - NoSQL Data Models
+2. **Cloud Data Warehouses**
+  - Introduction to Data Warehouses
+  - ELT and Data Warehause Technology in the Cloud
+  - AWS Data Technologies
+  - Implementing Data Warehouses on AWS
+3. **Spark & Data Lakes**
+  - Big Data Ecosystem, Data Lakes, & Spark
+  - Spark Essentials
+  - Using Spark & Data Lakes in the AWS Cloud
+  - Ingesting & organizing data in lakehouse architecture on AWS
+4. **Automate Data Pipelines**
+  - Data Pipelines
+  - Airflow & AWS
+  - Data Quality
+  - Production Data Pipelines
+5. **Capstone Project**
+
+
 
 
 
