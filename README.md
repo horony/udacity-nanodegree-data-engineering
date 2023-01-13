@@ -1,9 +1,18 @@
 # udacity-nanodegree-data-engineering
 
-Project files from 4 month **nanodegree *Data Engineering with AWS*** ([Link](https://www.udacity.com/course/data-engineer-nanodegree--nd027?utm_source=gsem_brand&utm_medium=ads_r&utm_campaign=19167921312_c_individuals&utm_term=143524475719&utm_keyword=udacity%20data%20engineer_e&gclid=EAIaIQobChMI5pnE5efE_AIVehoGAB1t9QJ3EAAYASAAEgJwLPD_BwE)). 
+Project files created during 4 month **nanodegree *Data Engineering with AWS*** ([Link](https://www.udacity.com/course/data-engineer-nanodegree--nd027?utm_source=gsem_brand&utm_medium=ads_r&utm_campaign=19167921312_c_individuals&utm_term=143524475719&utm_keyword=udacity%20data%20engineer_e&gclid=EAIaIQobChMI5pnE5efE_AIVehoGAB1t9QJ3EAAYASAAEgJwLPD_BwE)). 
 
 
 ## Contents of this repository
+
+Files and scripts from procect files.
+
+1. **Data Modeling**
+3. **Cloud Data Warehouses**
+4. **Spark & Data Lakes**
+5. **Automate Data Pipelines**
+6. **Capstone Project**
+  Los 
 
 
 ## Program information
