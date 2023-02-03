@@ -14,6 +14,5 @@ s
 
 The final Redshift star schema consists of 1 fact table and 4 dimension tables.
 
-![Redshift Data Model]([Dragster.jpg](https://github.com/horony/udacity-nanodegree-data-engineering/blob/main/4%20-%20Automate%20Data%20Pipelines/images/airflow_data_model.PNG
-))
+![Redshift Data Model]([https://github.com/horony/udacity-nanodegree-data-engineering/blob/main/4%20-%20Automate%20Data%20Pipelines/images/airflow_data_model.PNG])
 
