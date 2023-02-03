@@ -2,7 +2,9 @@
 
 Project files created during 4 month **nanodegree *Data Engineering with AWS*** ([Link](https://www.udacity.com/course/data-engineer-nanodegree--nd027?utm_source=gsem_brand&utm_medium=ads_r&utm_campaign=19167921312_c_individuals&utm_term=143524475719&utm_keyword=udacity%20data%20engineer_e&gclid=EAIaIQobChMI5pnE5efE_AIVehoGAB1t9QJ3EAAYASAAEgJwLPD_BwE)). 
 
+
 ---
+
 
 ## Contents of this repository
 
@@ -21,7 +23,9 @@ In this project continues on the *Sparkify* dataset. Data is extracted from S3 a
 **5 - Capstone Project:** 
 This project designs an analytical dataware house and corresponding ETLs for the bicycle sharing system *Citi Bikes* in New York City. The project combines bike trip data provided Citi Bikes with weather data of New York City. Data is extracted from a S3 bucket and an API, transformed into six data warehouse table with Spark and safed as parquet-files.
 
+
 ---
+
 
 ## Program information
 
