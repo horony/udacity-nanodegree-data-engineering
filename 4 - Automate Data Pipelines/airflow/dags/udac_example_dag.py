@@ -5,6 +5,9 @@ import os
 from airflow.operators import (LoadDimensionOperator, StageToRedshiftOperator, LoadFactOperator, DataQualityOperator)
 from helpers import SqlQueries
 
+AWS_KEY = '' # Enter AWS_KEY here
+AWS_SECRET = '' # Enter AWS_SECRET here
+
 default_args = {
     'owner': 'lennart',
     'start_date': datetime(2019, 1, 1),
@@ -20,7 +23,6 @@ dag = DAG('sparkify_dag',
           description='Sparkify ETL: S3 to Redshift',
           schedule_interval='0 * * * *' # Schedule: Every hour
          ) 
-
 
 start_operator = DummyOperator(
     task_id='Begin_execution',
@@ -71,7 +73,8 @@ load_user_dimension_table = LoadDimensionOperator(
     table_name = "users",
     redshift_conn_id = "redshift",
     provide_context=True,
-    sql_query = SqlQueries.user_table_insert
+    sql_query = SqlQueries.user_table_insert,
+    mode = 'append'
 )
 
 # creates dimension table songs from stage data within Redshift
@@ -81,7 +84,8 @@ load_song_dimension_table = LoadDimensionOperator(
     table_name = "songs",
     redshift_conn_id = "redshift",
     provide_context=True,
-    sql_query = SqlQueries.song_table_insert
+    sql_query = SqlQueries.song_table_insert,
+    mode = 'append'
 )
 
 # creates dimension table artists from stage data within Redshift
@@ -91,7 +95,9 @@ load_artist_dimension_table = LoadDimensionOperator(
     table_name = "artists",
     redshift_conn_id = "redshift",
     provide_context=True,
-    sql_query = SqlQueries.artist_table_insert
+    sql_query = SqlQueries.artist_table_insert,
+    mode = 'append'
+
 )
 
 # creates dimension table time from stage data within Redshift
@@ -101,7 +107,8 @@ load_time_dimension_table = LoadDimensionOperator(
     table_name = "time",
     redshift_conn_id = "redshift",
     provide_context=True,
-    sql_query = SqlQueries.time_table_insert
+    sql_query = SqlQueries.time_table_insert,
+    mode = 'append'
 )
 
 # carries out quality checks on previously created tables
