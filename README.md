@@ -14,7 +14,8 @@ Files and scripts from procect files.
 **3 - Spark & Data Lakes:**
 In this project a data lake containing songplay-data from *Sparkify* and a corresponding ETL is constructed using EMR, S3 and Spark. Data is extracted from a S3 bucket, transformed data warehouse tables with Spark on EMR and safed as parquet-files.
 
-**4 - Automate Data Pipelines:** tbd
+**4 - Automate Data Pipelines:** 
+In this project continues on the *Sparkify* dataset. Data is extracted from S3 and written into Redshift database with an Python ETL. Main focus of this project is the orchestration of the ETL trough Apache Airflow.
 
 **5 - Capstone Project:** 
 This project designs an analytical dataware house and corresponding ETLs for the bicycle sharing system *Citi Bikes* in New York City. The project combines bike trip data provided Citi Bikes with weather data of New York City. Data is extracted from a S3 bucket and an API, transformed into six data warehouse table with Spark and safed as parquet-files.
