@@ -4,11 +4,6 @@ As in the previous project this project 4 deals with the music-streaming-dataset
 
 ---
 
-## Files in this Project
-
-
-
-
 ## Data Pipeline with Airflow
 
 s
@@ -18,3 +13,4 @@ s
 ## Redshift Data Model
 
 The final Redshift star schema consists of 1 fact table and 4 dimension tables.
+
