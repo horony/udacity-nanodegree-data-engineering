@@ -10,9 +10,11 @@ Project files created during 4 month **nanodegree *Data Engineering with AWS*** 
 
 Files and scripts from procect files.
 
-**1- Data Modeling:** tbd 
+**1 - Data Modeling:** 
+Project 1 actually consists of 2 projects. Both deal with data from the music-streaming startup *Sparkify*. In project 1A a relational Postgres database is constructed using input data from json-files. In project 1B a number of business cases are explored using the NoSQL database Apache Cassandra.
 
-**2 - Cloud Data Warehouses:** tbd
+**2 - Cloud Data Warehouses:** 
+Objective of this project was to set up a Redshift data warehouse on AWS for the music-streaming startup *Sparkify*. Data is supplied through a Python ETL extracting data from S3, staging it on Redshift and transforming it into a star schema.
 
 **3 - Spark & Data Lakes:**
 In this project a data lake containing songplay-data from *Sparkify* and a corresponding ETL is constructed using EMR, S3 and Spark. Data is extracted from a S3 bucket, transformed data warehouse tables with Spark on EMR and safed as parquet-files.
@@ -21,7 +23,7 @@ In this project a data lake containing songplay-data from *Sparkify* and a corre
 In this project continues on the *Sparkify* dataset. Data is extracted from S3 and written into Redshift database with an Python ETL. Main focus of this project is the orchestration of the ETL trough Apache Airflow.
 
 **5 - Capstone Project:** 
-This project designs an analytical dataware house and corresponding ETLs for the bicycle sharing system *Citi Bikes* in New York City. The project combines bike trip data provided Citi Bikes with weather data of New York City. Data is extracted from a S3 bucket and an API, transformed into six data warehouse table with Spark and safed as parquet-files.
+This graduation project designs an analytical dataware house and corresponding ETLs for the bicycle sharing system *Citi Bikes* in New York City. The project combines bike trip data provided Citi Bikes with weather data of New York City. Data is extracted from a S3 bucket and an API, transformed into six data warehouse table with Spark and safed as parquet-files.
 
 
 ---
