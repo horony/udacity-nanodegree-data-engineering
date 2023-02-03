@@ -2,7 +2,6 @@ import configparser
 import psycopg2
 from sql_queries import copy_table_queries, insert_table_queries
 
-
 def load_staging_tables(cur, conn):
     """
     Executes SQL queries from sql_queries.py to copy data from S3 to Redshift staging tables
@@ -11,7 +10,6 @@ def load_staging_tables(cur, conn):
         cur.execute(query)
         conn.commit()
 
-
 def insert_tables(cur, conn):
     """
     Executes SQL queries from sql_queries.py to insert data from Redshift staging tables into a Redshift production tables
@@ -19,7 +17,6 @@ def insert_tables(cur, conn):
     for query in insert_table_queries:
         cur.execute(query)
         conn.commit()
-
 
 def main():
     """
