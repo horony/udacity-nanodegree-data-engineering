@@ -20,3 +20,5 @@ Schematic overview of the hourly Airflow Orchestration:
 The final Redshift star schema consists of 1 fact table and 4 dimension tables:
 
 ![Redshift Data Model](./images/airflow_data_model.PNG)
+
+Furthermore the raw data is stored in the two tables *staging_events* and *staging_songs* (not shown in the Data Model as the raw data is not part of the star schema).
