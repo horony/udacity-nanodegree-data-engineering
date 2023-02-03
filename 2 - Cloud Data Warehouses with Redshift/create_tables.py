@@ -2,7 +2,6 @@ import configparser
 import psycopg2
 from sql_queries import create_table_queries, drop_table_queries
 
-
 def drop_tables(cur, conn):
     """
     Executes SQL queries from sql_queries.py to drop defined tables in Redshift
@@ -11,7 +10,6 @@ def drop_tables(cur, conn):
         cur.execute(query)
         conn.commit()
 
-
 def create_tables(cur, conn):
     """
     Executes SQL queries from sql_queries.py to create defined tables in Redshift    
@@ -19,7 +17,6 @@ def create_tables(cur, conn):
     for query in create_table_queries:
         cur.execute(query)
         conn.commit()
-
 
 def main():
     """
