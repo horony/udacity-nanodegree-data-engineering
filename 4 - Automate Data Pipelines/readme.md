@@ -10,10 +10,10 @@ Schematic overview of the hourly Airflow Orchestration:
 
 BILD
 
-1. In *stage_events_to_redshift* and *stage_songs_to_redshift* data is extracted from S3 and saved into the two staging tables *staging_events* and *staging_songs* in Redshift. The tables contain raw user behaviour from *Sparkify* and a open source song library.
-2. In *load_songplays_table* both staging tables are merged and transformed into the fact table *songplays* through an SQL query.
-3. In 4 *load_dimension*-operators unique values are extracted from the staging tables and are stored into the 4 dimension tables *users*, *songs*, *artists* and *time* through SQL queries.
-4. In *run_quality_checks* quality checks are performed on all 5 tables in order to ensure integrity of the data and check if the ETL ran correctly.
+1. In *stage_events* and *stage_songs* data is extracted from S3 and saved into the two staging tables *staging_events* and *staging_songs* in Redshift. The tables contain raw user behaviour from *Sparkify* and a open source song library.
+2. In *load_songplays_fact_table* both staging tables are merged and transformed into the fact table *songplays* through an SQL query.
+3. In 4 *load_dim_tables*-operators unique values are extracted from the staging tables and are stored into the 4 dimension tables *users*, *songs*, *artists* and *time* through SQL queries.
+4. In *run_data_quality_checks* quality checks are performed on all 5 tables in order to ensure integrity of the data and check if the ETL ran correctly.
 
 ## Redshift Data Model
 
