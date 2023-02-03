@@ -8,7 +8,7 @@ As in the previous project this project 4 deals with the music-streaming-dataset
 
 Schematic overview of the hourly Airflow Orchestration:
 
-BILD
+![DAG](./images/dag_schema.PNG)
 
 1. In *stage_events* and *stage_songs* data is extracted from S3 and saved into the two staging tables *staging_events* and *staging_songs* in Redshift. The tables contain raw user behaviour from *Sparkify* and a open source song library.
 2. In *load_songplays_fact_table* both staging tables are merged and transformed into the fact table *songplays* through an SQL query.
