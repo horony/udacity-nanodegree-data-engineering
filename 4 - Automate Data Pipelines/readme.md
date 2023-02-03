@@ -17,6 +17,6 @@ BILD
 
 ## Redshift Data Model
 
-The final Redshift star schema consists of 1 fact table and 4 dimension tables.
+The final Redshift star schema consists of 1 fact table and 4 dimension tables:
 
 ![Redshift Data Model](./images/airflow_data_model.PNG)
