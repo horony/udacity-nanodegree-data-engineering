@@ -5,9 +5,6 @@ import os
 from airflow.operators import (LoadDimensionOperator, StageToRedshiftOperator, LoadFactOperator, DataQualityOperator)
 from helpers import SqlQueries
 
-#AWS_KEY = '' # Enter AWS_KEY here
-#AWS_SECRET = '' # Enter AWS_SECRET here
-
 default_args = {
     'owner': 'lennart',
     'start_date': datetime(2019, 1, 1),
