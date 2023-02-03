@@ -7,15 +7,13 @@ As in the previous project this project 4 deals with the music-streaming-dataset
 ## Files in this Project
 
 
----
+
 
 ## Data Pipeline with Airflow
 
 s
 
-s
-
---- 
+s 
 
 ## Redshift Data Model
 
