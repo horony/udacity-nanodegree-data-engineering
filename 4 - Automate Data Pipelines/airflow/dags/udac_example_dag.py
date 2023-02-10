@@ -5,9 +5,6 @@ import os
 from airflow.operators import (LoadDimensionOperator, StageToRedshiftOperator, LoadFactOperator, DataQualityOperator)
 from helpers import SqlQueries
 
-AWS_KEY = '' # Enter AWS_KEY here
-AWS_SECRET = '' # Enter AWS_SECRET here
-
 default_args = {
     'owner': 'lennart',
     'start_date': datetime(2019, 1, 1),
@@ -15,7 +12,8 @@ default_args = {
     'depends_on_past': False,
     'retries': 3,
     'retry_delay': timedelta(minutes=5),
-    'catchup': False
+    'catchup': False,
+    'max_active_runs': 1
     }
 
 dag = DAG('sparkify_dag',
@@ -48,7 +46,7 @@ stage_songs_to_redshift = StageToRedshiftOperator(
     dag=dag,
     table_name="staging_songs",
     s3_bucket="udacity-dend",
-    s3_key="song_data",
+    s3_key="song_data/A/A/",
     file_format="JSON",   
     redshift_conn_id = "redshift",
     aws_credential_id = "aws_credentials",   
@@ -116,8 +114,11 @@ run_quality_checks = DataQualityOperator(
     task_id='Run_data_quality_checks',
     dag=dag,
     redshift_conn_id="redshift",
-    list_tables=['songplays', 'users', 'songs', 'artists', 'time'],
-    list_pkeys=['playid', 'userid', 'songid', 'artistid', 'start_time']
+    dict_tests = [{'table': 'songplays', 'min_rows': 1},
+                  {'table': 'users', 'min_rows': 1},
+                  {'table': 'songs', 'min_rows': 1},
+                  {'table': 'artists', 'min_rows': 1},
+                  {'table': 'time', 'min_rows': 1}]
 )
 
 end_operator = DummyOperator(
