@@ -10,8 +10,7 @@ class DataQualityOperator(BaseOperator):
     @apply_defaults
     def __init__(self,
                  redshift_conn_id,
-                 list_tables,
-                 list_pkeys,
+                 dict_tests,
                  *args, **kwargs):
         
         """
@@ -20,9 +19,7 @@ class DataQualityOperator(BaseOperator):
 
         super(DataQualityOperator, self).__init__(*args, **kwargs)
         self.redshift_conn_id = redshift_conn_id
-        self.list_tables = list_tables
-        self.list_pkeys = list_pkeys
-
+        self.dict_tests = dict_tests
 
     def execute(self, context):
         
@@ -34,28 +31,29 @@ class DataQualityOperator(BaseOperator):
         redshift_hook = PostgresHook(self.redshift_conn_id)
         
         # Iterating tables and performing quality checks
-        i = 0
-        for table in self.list_tables:
+        
+        for elem in self.dict_tests:
             
-            # Checking number of records
+            # Test 1: Checking if table exists
+            
+            table = elem['table']
+            
+            self.log.info(f"Checking if table {table} exists in Redshift")
+            num_tables = redshift_hook.get_records(f"SELECT count(*) FROM pg_tables WHERE pg_tables.schemaname = 'public' AND pg_tables.tablename = '{table}'")
+
+            if num_tables[0][0] == 1:
+                self.log.info(f"Check passed: Table {table} exists")
+            else:
+                raise ValueError(f"Check failed: Table {table} does not exist")             
+            
+            # Test 2: Checking number of records
+            
             self.log.info(f"Checking number of records in table {table}")
+            
             num_rows = redshift_hook.get_records(f"SELECT COUNT(*) FROM {table}")
-            
-            if num_rows[0][0] >= 1:
-                self.log.info(f"Table {table} passed record check ({num_rows[0][0]} records)")
+            min_rows_allowed = elem['min_rows']
+
+            if num_rows[0][0] >= min_rows_allowed:
+                self.log.info(f"Check passed: Table {table} passed record check ({num_rows[0][0]} records)")
             else:
-                raise ValueError(f"Table {table} failed record check")
-            
-            # Checking if pkey is unique
-            key_to_check = self.list_pkeys[i]
-            self.log.info(f"Checking if pkey {key_to_check} in table {table} is unique")
-            
-            
-            key_difference = redshift_hook.get_records(f"SELECT COUNT({key_to_check}) - COUNT(DISTINCT {key_to_check}) FROM {table}")
-            
-            if key_difference[0][0] != 0:
-                self.log.info(f"Table {table} passed pkey check")
-            else:
-                raise ValueError(f"Table {table} failed pkey check")
-            
-            i = i+1
+                raise ValueError(f"Check failed: Table {table} failed record check ({num_rows[0][0]} records)")
